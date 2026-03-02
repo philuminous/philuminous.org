@@ -1,0 +1,48 @@
+# netlify.toml — PhiLuminous SEO Routing
+# Clean URL rewrites: each /route serves its own SEO wrapper (200 rewrite, not redirect)
+
+[build]
+  publish = "."
+
+# Serve each SEO wrapper at the clean URL (200 = serve the file, not a redirect)
+[[redirects]]
+  from = "/nlp_coaching"
+  to   = "/nlp_coaching/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/theta_healing"
+  to   = "/theta_healing/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/astrology_readings"
+  to   = "/astrology_readings/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/bach_flower_remedies"
+  to   = "/bach_flower_remedies/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/spiritual_circles_nyc"
+  to   = "/spiritual_circles_nyc/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/about"
+  to   = "/about/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/contact"
+  to   = "/contact/index.html"
+  status = 200
+
+# SPA fallback — everything else falls through to the main index.html
+# Hash routing is preserved client-side; no hash stripping occurs here.
+[[redirects]]
+  from   = "/*"
+  to     = "/index.html"
+  status = 200
